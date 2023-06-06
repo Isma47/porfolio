@@ -1,0 +1,94 @@
+@use "../creates/mixins" as m;
+@use "../creates/variables" as v;
+.contactos {
+  background-color: v.$naranja;
+  padding: 2rem 0 0;
+  @include m.flex( none,center, end);
+  gap: 2rem;
+  img {
+    width: 2rem;
+  }
+  a {
+    color: v.$blanco;
+    font: {
+      family: v.$fuente-lato;
+      size: 1rem;
+      weight: bolder;
+    }
+  }
+}
+.abrircontacto{
+  display: flex;
+}
+
+.header {
+  @include m.flex(flex, center, space-around);
+  background-color: v.$naranja;
+  padding: 2rem 0;
+  h1 {
+    color: v.$blanco;
+    font: {
+      size: 2rem;
+      family: "Arial";
+    }
+    @include m.tablet {
+      font-size: 3rem;
+    }
+  }
+  .header-nav {
+    display: none;
+    @include m.tablet{
+        display: flex;
+        gap: 5rem;
+
+        a {
+            color: v.$blanco;
+            font: {
+                family:'Arial';
+                weight: bolder;
+            }
+            transition: color .5s ease-in;
+            &:hover {
+              color: v.$negro;
+            }
+        }
+    }
+  }
+
+  /*Este menu es cuando se activa el menu hamburguesa*/
+  .menu-fixed {
+    @include m.flex(flex, start, center);
+    flex-direction: column;
+    gap: 5rem;
+    width: 50vw;
+    height: 100vh;
+    background-color: v.$blanco;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    a {
+      color: v.$negro;
+      font: {
+        family: v.$fuente-lato;
+        size: 1.5rem;
+        weight: bolder;
+      }
+    }
+
+  }
+
+
+  .menu-hamburguesa {
+    div {
+      width: 2.3rem;
+      height: 0.3rem;
+      margin-top: 0.3rem;
+      background-color: v.$blanco;
+    }
+    //.menu-hamburguesa desketop
+    @include m.tablet() {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@use '../creates/mixins' as m;
+@use '../creates/variables' as v;
+
+.presentación {
+    @include m.grid(grid, 1, 1fr);
+    margin-top: 2rem;
+    .presentación-photo {
+        grid-row: 2 / 2 ;
+    }
+    //Desktop
+    @include m.tablet {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        .presentación-photo {
+            grid-row: 1 / 2 ;
+            align-items: center;
+        }
+    }
+
+    .presentación-text {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        align-self: center;
+        p {
+            font: {
+                family: v.$fuente-lato;
+                size: 1.5rem;
+            }
+        }  
+        
+        span {
+            color: v.$naranja;
+            font: {
+                weight: bolder;
+                size: 2.5rem;
+            }
+        }
+
+        a {
+            font: {
+                family: v.$fuente-lato;
+                weight: bolder;
+            }
+            color: v.$blanco;
+            border-radius: 100px;
+            padding: 1rem 3rem;
+            background-color: v.$negro;
+            margin-top: 3rem;
+            align-self: center;
+
+            transition:all .5s ease ;
+            &:hover {
+                background-color: v.$blanco;
+                color: v.$negro;
+                border: 1px solid v.$negro;
+            }
+        }
+    }
+
+
+}
+
+

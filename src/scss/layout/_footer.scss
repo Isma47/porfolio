@@ -1,0 +1,53 @@
+@use '../creates/mixins' as m;
+@use '../creates/variables' as v;
+
+.footer{
+    padding: 2rem 0;
+    background-color: v.$naranja;
+    @include m.grid(grid, 1, 1fr);
+    @include m.tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h2 {
+        margin: 0 0 2rem;
+        color: v.$blanco;
+        font: {
+            size: 3rem;
+            family: v.$fuente-lato;
+            weight: 900; 
+        }
+    }
+    .footer-contacto {
+        .contacto {
+            @extend h2;
+        }
+        .contacto-icon {
+            @include m.grid(grid, 1, auto);
+            gap: 2rem;
+            @include m.tablet {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            margin-top: 2rem;
+            text-align: center;
+            
+            p, a{
+                color: v.$blanco;
+                font: {
+                    family:v.$fuente-lato;
+                    weigth: bolder;
+                }
+                display: flex;
+                gap: 1rem 0;
+                align-items: center;
+                transition: color .5s ease-in-out;
+                &:hover {
+                    color: v.$negro;
+                }
+            }
+            img {
+                width: 2rem;
+            }
+        }
+    }
+}

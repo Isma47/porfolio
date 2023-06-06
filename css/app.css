@@ -1,0 +1,264 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.contactos {
+  background-color: #FFA500;
+  padding: 2rem 0 0;
+  display: none;
+  align-items: center;
+  justify-content: end;
+  gap: 2rem;
+}
+.contactos img {
+  width: 2rem;
+}
+.contactos a {
+  color: #ffffff;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.abrircontacto {
+  display: flex;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #FFA500;
+  padding: 2rem 0;
+  /*Este menu es cuando se activa el menu hamburguesa*/
+}
+.header h1 {
+  color: #ffffff;
+  font-size: 2rem;
+  font-family: "Arial";
+}
+@media (min-width: 769px) {
+  .header h1 {
+    font-size: 3rem;
+  }
+}
+.header .header-nav {
+  display: none;
+}
+@media (min-width: 769px) {
+  .header .header-nav {
+    display: flex;
+    gap: 5rem;
+  }
+  .header .header-nav a {
+    color: #ffffff;
+    font-family: "Arial";
+    font-weight: bolder;
+    transition: color 0.5s ease-in;
+  }
+  .header .header-nav a:hover {
+    color: #000;
+  }
+}
+.header .menu-fixed {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+  width: 50vw;
+  height: 100vh;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.header .menu-fixed a {
+  color: #000;
+  font-family: "Lato", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+.header .menu-hamburguesa div {
+  width: 2.3rem;
+  height: 0.3rem;
+  margin-top: 0.3rem;
+  background-color: #ffffff;
+}
+@media (min-width: 769px) {
+  .header .menu-hamburguesa {
+    display: none;
+  }
+}
+
+.presentación {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-top: 2rem;
+}
+.presentación .presentación-photo {
+  grid-row: 2/2;
+}
+@media (min-width: 769px) {
+  .presentación {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  .presentación .presentación-photo {
+    grid-row: 1/2;
+    align-items: center;
+  }
+}
+.presentación .presentación-text {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
+}
+.presentación .presentación-text p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.5rem;
+}
+.presentación .presentación-text span {
+  color: #FFA500;
+  font-weight: bolder;
+  font-size: 2.5rem;
+}
+.presentación .presentación-text a {
+  font-family: "Lato", sans-serif;
+  font-weight: bolder;
+  color: #ffffff;
+  border-radius: 100px;
+  padding: 1rem 3rem;
+  background-color: #000;
+  margin-top: 3rem;
+  align-self: center;
+  transition: all 0.5s ease;
+}
+.presentación .presentación-text a:hover {
+  background-color: #ffffff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.title-h2 {
+  text-align: center;
+  background-color: #FFA500;
+  font-family: "Arial";
+  font-size: 2.5rem;
+}
+
+.sobre-mi, .sobre-mi li {
+  margin: 2rem 0;
+  line-height: 1.5;
+  font-family: "Lato", sans-serif;
+  font-size: 1.2rem;
+}
+.sobre-mi li {
+  list-style-type: circle;
+  margin-left: 2.5rem;
+  font-weight: bold;
+}
+
+.tecnologias .tecnologias-svg {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.tecnologias .tecnologias-svg li {
+  width: 8rem;
+  justify-self: center;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: bolder;
+}
+@media (min-width: 769px) {
+  .tecnologias .tecnologias-svg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.cv {
+  margin: 2rem 0;
+}
+.cv .cv-image {
+  margin: auto;
+  width: 100vw;
+}
+@media (min-width: 769px) {
+  .cv .cv-image {
+    width: 50vw;
+  }
+}
+
+.footer {
+  padding: 2rem 0;
+  background-color: #FFA500;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 769px) {
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.footer h2, .footer .footer-contacto .contacto {
+  margin: 0 0 2rem;
+  color: #ffffff;
+  font-size: 3rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+}
+.footer .footer-contacto .contacto-icon {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  gap: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+@media (min-width: 769px) {
+  .footer .footer-contacto .contacto-icon {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.footer .footer-contacto .contacto-icon p, .footer .footer-contacto .contacto-icon a {
+  color: #ffffff;
+  font-family: "Lato", sans-serif;
+  font-weigth: bolder;
+  display: flex;
+  gap: 1rem 0;
+  align-items: center;
+  transition: color 0.5s ease-in-out;
+}
+.footer .footer-contacto .contacto-icon p:hover, .footer .footer-contacto .contacto-icon a:hover {
+  color: #000;
+}
+.footer .footer-contacto .contacto-icon img {
+  width: 2rem;
+}
+
+/*# sourceMappingURL=app.css.map */

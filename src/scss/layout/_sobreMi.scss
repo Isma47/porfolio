@@ -1,0 +1,68 @@
+@use "../creates/mixins" as m;
+@use "../creates/variables" as v;
+
+//Titulos
+.title-h2 {
+  text-align: center;
+  background-color: v.$naranja;
+
+  font: {
+    family: "Arial";
+    size: 2.5rem;
+  }
+}
+
+//Sobre Mi
+.sobre-mi {
+  margin: 2rem 0;
+  line-height: 1.5;
+
+  font: {
+    family: v.$fuente-lato;
+    size: 1.2rem;
+  }
+
+  li {
+    @extend .sobre-mi;
+    list-style-type: circle;
+    margin-left: 2.5rem;
+    font-weight: bold;
+  }
+}
+
+//Tecnologias
+.tecnologias {
+  .tecnologias-svg {
+    margin-top: 2rem;
+    @include m.grid(grid, 2, 1fr);
+
+    li {
+      width: 8rem;
+      justify-self: center;
+      text-align: center;
+
+      font: {
+        family: v.$fuente-lato;
+        weight: bolder;
+      }
+    }
+
+    //desktop
+    @include m.tablet {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+//CV
+
+.cv {
+    margin: 2rem 0;
+    .cv-image {
+        margin: auto;
+        width: 100vw;
+        @include m.tablet {
+            width: 50vw;
+        }
+    }
+}
